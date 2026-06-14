@@ -1,0 +1,20 @@
+[project]
+name = "install-torch-cuda-with-uv-on-windows"
+version = "0.1.0"
+description = "Reproducible PyTorch + CUDA setup on Windows using uv"
+dependencies = [
+    "torch",
+    "torchvision",
+    "torchaudio",
+]
+requires-python = ">=3.12,<3.13"
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchvision = { index = "pytorch" }
+torchaudio = { index = "pytorch" }
